@@ -16,10 +16,10 @@ Os times de frontend e UI já estão trabalhando no layout e nas telas. Para o b
  Temos um período de tempo de 4 semanas para desenvolver o projeto. Nas 3 primeiras, teremos tarefas a serem feitas e a última semana para ajustes ou para completar as tarefas pendentes. Vamos trabalhar com o sistema ágil de desenvolvimento, utilizando o Trello
  
 ## :computer: Sobre o projeto
-Videolandia é um projeto que está sendo desenvolvido como desafio proposto pela ALURA, onde o maior desafio é colocar em prática os conhecimentos adquiridos durante a jornada de aprendizado 
-e consolidar os conhecimentos. Nesse cenário foi proposto a criação de uma plataforma de videos com funcionalidades de cadastro, busca, atualização, deleção e também com login do usuário com autenticação.
-Toda semana será lançado um backlog no trello para atividade, onde simulará o dia a dia do programador. 
-Atualente estamos na primeira semana!
+Videolandia é um projeto que está sendo desenvolvido como desafio proposto pela ALURA, onde o maior desafio é colocar em prática os conhecimentos adquiridos durante a jornada de aprendizado e consolidar os conhecimentos. <br>
+Nesse cenário foi proposto a criação de uma plataforma de videos com funcionalidades de cadastro, busca, atualização, deleção e também com login do usuário com autenticação.<br>
+Toda semana será lançado um backlog no trello para atividade, onde simulará o dia a dia do programador. <br>
+Atualente estamos na primeira semana! <br>
 Vamos lá! 
 
 ## :gear: Funcionalidades
