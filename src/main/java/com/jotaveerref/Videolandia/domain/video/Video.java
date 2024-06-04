@@ -1,19 +1,17 @@
-package com.jotaveerref.Videolandia.domain;
+package com.jotaveerref.Videolandia.domain.video;
 
-import com.jotaveerref.Videolandia.DTO.DadosAtualizaVideo;
-import com.jotaveerref.Videolandia.DTO.DadosRegistroVideo;
+import com.jotaveerref.Videolandia.domain.categoria.Categoria;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity(name = "Video")
 @Table(name = "videos")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+
 public class Video {
 
     @Id
@@ -23,6 +21,10 @@ public class Video {
     private String descricao;
     private String url;
     private boolean ativo;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
     public Video(DadosRegistroVideo dados) {
         this.ativo = true;
@@ -43,6 +45,11 @@ public class Video {
         if(dados.url() != null){
             this.url = dados.url();
         }
+    }
+
+    public void setCategoria(Categoria categoria){
+        this.categoria = categoria;
+        categoria.getVideo().add(this);
     }
 
     public void setAtivo(boolean ativo) {

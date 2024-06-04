@@ -1,6 +1,6 @@
-package com.jotaveerref.Videolandia.DTO;
+package com.jotaveerref.Videolandia.domain.video;
 
-import com.jotaveerref.Videolandia.domain.Video;
+import com.jotaveerref.Videolandia.domain.video.Video;
 
 public record DadosVideo(
         Long id,

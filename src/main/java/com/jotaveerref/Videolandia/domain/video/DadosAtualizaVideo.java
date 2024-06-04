@@ -1,6 +1,7 @@
-package com.jotaveerref.Videolandia.DTO;
+package com.jotaveerref.Videolandia.domain.video;
 
-import com.jotaveerref.Videolandia.domain.Video;
+import com.jotaveerref.Videolandia.domain.video.Video;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizaVideo(
