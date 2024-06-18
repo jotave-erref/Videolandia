@@ -3,6 +3,7 @@ package com.jotaveerref.Videolandia.domain.categoria;
 import com.jotaveerref.Videolandia.domain.video.Video;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@EqualsAndHashCode(of = "id")
 public class Categoria {
 
     @Id

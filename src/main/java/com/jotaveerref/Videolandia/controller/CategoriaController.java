@@ -1,9 +1,6 @@
 package com.jotaveerref.Videolandia.controller;
 
 import com.jotaveerref.Videolandia.domain.categoria.*;
-import com.jotaveerref.Videolandia.domain.video.DadosDetalhamentoVideo;
-import com.jotaveerref.Videolandia.domain.video.Video;
-import com.jotaveerref.Videolandia.infra.exceptions.ValidadorException;
 import com.jotaveerref.Videolandia.repository.CateogriaRepository;
 import com.jotaveerref.Videolandia.service.CategoriaService;
 import jakarta.transaction.Transactional;
@@ -11,15 +8,10 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.support.PageableExecutionUtils;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/categorias")

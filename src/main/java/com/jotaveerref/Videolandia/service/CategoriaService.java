@@ -2,7 +2,6 @@ package com.jotaveerref.Videolandia.service;
 
 import com.jotaveerref.Videolandia.domain.categoria.Categoria;
 import com.jotaveerref.Videolandia.domain.categoria.DadosAtualizaCategoria;
-import com.jotaveerref.Videolandia.domain.categoria.DadosCategoria;
 import com.jotaveerref.Videolandia.domain.categoria.DadosCategoriaVideos;
 import com.jotaveerref.Videolandia.infra.exceptions.ValidadorException;
 import com.jotaveerref.Videolandia.repository.CateogriaRepository;

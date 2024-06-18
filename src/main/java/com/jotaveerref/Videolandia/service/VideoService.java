@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VideoService {
@@ -76,11 +77,12 @@ public class VideoService {
     }
 
     public List<DadosVideo> retornaVideoPorTitulo(String titulo){
-        var video = videoRepository.findByTitleContainingIgnoreCase(titulo).stream().map(DadosVideo::new).toList();
+        var video = videoRepository.findByTitleContainingIgnoreCase(titulo).stream().map(DadosVideo::new).collect(Collectors.toList());
         if(videoRepository.findByTitleContainingIgnoreCase(titulo).isEmpty()){
             throw new ValidadorException("Nenhum vídeo encontrado!");
         }
         return video;
+
     }
 
 }

@@ -1,23 +1,22 @@
 package com.jotaveerref.Videolandia.controller;
 
-import com.jotaveerref.Videolandia.domain.video.DadosAtualizaVideo;
-import com.jotaveerref.Videolandia.domain.video.DadosDetalhamentoVideo;
-import com.jotaveerref.Videolandia.domain.video.DadosRegistroVideo;
-import com.jotaveerref.Videolandia.domain.video.DadosVideo;
-import com.jotaveerref.Videolandia.infra.exceptions.ValidadorException;
+import com.jotaveerref.Videolandia.domain.video.*;
 import com.jotaveerref.Videolandia.repository.VideoRepository;
 import com.jotaveerref.Videolandia.service.VideoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("videos")
@@ -78,5 +77,12 @@ public class VideoController {
 
         var video = videoService.retornaVideoPorTitulo(titulo);
         return ResponseEntity.ok(video);
+    }
+
+    @GetMapping("free")
+    public ResponseEntity<List<DadosVideo>> videosFree(){
+
+        List<DadosVideo> videos = repository.findVideoLimitFive().stream().map(DadosVideo::new).toList();
+        return ResponseEntity.ok(videos);
     }
 }

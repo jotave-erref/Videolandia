@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface VideoRepository extends JpaRepository<Video, Long> {
     Page<Video> findAllByAtivoTrue(Pageable paginacao);
@@ -18,4 +19,7 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
 
     @Query("select v from Video v where lower(v.titulo) like lower(concat('%', :titulo, '%')) and ativo = true")
     List<Video> findByTitleContainingIgnoreCase(String titulo);
+
+    @Query(value = "select * from videos order by rand() limit 5", nativeQuery = true)
+    List<Video> findVideoLimitFive();
 }
