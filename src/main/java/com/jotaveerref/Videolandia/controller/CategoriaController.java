@@ -32,6 +32,7 @@ public class CategoriaController {
     @PostMapping
     @Transactional
     public ResponseEntity<DadosDetalhamentoCategoria> registrar(@RequestBody @Valid DadosCategoria dados, UriComponentsBuilder uri){
+
         var categoria = repository.save(new Categoria(dados));
         var url = uri.path("{id}").buildAndExpand(categoria.getId()).toUri();
         return ResponseEntity.created(url).body(new DadosDetalhamentoCategoria(categoria));

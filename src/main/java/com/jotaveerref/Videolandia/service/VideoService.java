@@ -1,6 +1,9 @@
 package com.jotaveerref.Videolandia.service;
 
-import com.jotaveerref.Videolandia.domain.video.*;
+import com.jotaveerref.Videolandia.domain.video.DadosAtualizaVideo;
+import com.jotaveerref.Videolandia.domain.video.DadosRegistroVideo;
+import com.jotaveerref.Videolandia.domain.video.DadosVideo;
+import com.jotaveerref.Videolandia.domain.video.Video;
 import com.jotaveerref.Videolandia.infra.exceptions.ValidadorException;
 import com.jotaveerref.Videolandia.repository.CateogriaRepository;
 import com.jotaveerref.Videolandia.repository.VideoRepository;
@@ -29,6 +32,7 @@ public class VideoService {
 
         var categoria = cateogriaRepository.findById(dados.categoriaId()).get();
 
+
         var video = new Video(dados);
         video.setCategoria(categoria);
 
@@ -37,7 +41,7 @@ public class VideoService {
 
     public Video retornaVideoPorId(Long id){
         var video = videoRepository.getReferenceById(id);
-        if(!videoRepository.existsById(id) || !video.isAtivo()){
+        if(!video.isAtivo()){
             throw new ValidadorException("Vídeo não encontrado");
         }
         return video;

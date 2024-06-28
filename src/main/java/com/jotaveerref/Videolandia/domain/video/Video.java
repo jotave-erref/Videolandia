@@ -53,10 +53,6 @@ public class Video {
         categoria.getVideo().add(this);
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
-
     public void exclusaoLogica(){
         this.ativo = false;
     }

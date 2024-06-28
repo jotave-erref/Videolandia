@@ -2,8 +2,6 @@ package com.jotaveerref.Videolandia.repository;
 
 import com.jotaveerref.Videolandia.domain.categoria.Categoria;
 import com.jotaveerref.Videolandia.domain.video.Video;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
